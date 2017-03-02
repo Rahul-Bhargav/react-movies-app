@@ -142,6 +142,16 @@ it('getMoviesBasedOnActor should return error if movies is invalid', () => {
   expect(result).toEqual('invalid movies input')
 })
 
+it('getMoviesBasedOnActor should return error if movies is object', () => {
+  const result = helper.getMoviesBasedOnActor({}, actors[0])
+  expect(result).toEqual('invalid movies input')
+})
+
+it('getMoviesBasedOnActor should return error if movies is empty array', () => {
+  const result = helper.getMoviesBasedOnActor([], actors[0])
+  expect(result).toEqual('invalid movies input')
+})
+
 // GetRatingColor
 it('getRatingColor should return String', () => {
   const result = helper.getRatingColor(1)
