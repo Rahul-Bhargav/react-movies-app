@@ -1,0 +1,1 @@
+This application displays movie data from a movies API
