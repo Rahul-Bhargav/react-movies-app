@@ -26,7 +26,7 @@ export default class Container extends React.Component {
     )
   }
   componentDidMount () {
-    apiInterface.readMovieRefs()
+    apiInterface.readMovie()
       .then(result => {
         this.setState({ movies: result, loading: false, actors: helper.generateActorsList(result) })
       })

@@ -1,20 +1,22 @@
 import React from 'react'
 import '../styles/movie.css'
+import MovieRating from './movieRating'
+import MovieContent from './movieContent'
 
 const Movie = (props) => {
   const themeStyle = {
-    backgroundColor: props.movie.theme,
-    display: 'inline-block',
-    height: '80px',
-    flexBasis: '10%'
+    backgroundColor: props.movie.theme
   }
   return (
     <div className="movie">
-      <div style={themeStyle} />
-      <div> {props.movie.name} </div>
-      <div className="description">
-        {props.movie.description}
-      </div>
+      <div className="theme-strip" style={themeStyle} />
+      <MovieContent
+        name={props.movie.name}
+        description={props.movie.description}
+        actors={props.movie.actors}
+        date={props.movie.releaseDate}
+      />
+      <MovieRating rating={props.movie.rating} />
     </div>
   )
 }
