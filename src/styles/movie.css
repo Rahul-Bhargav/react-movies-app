@@ -1,0 +1,9 @@
+.movie {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 80px;
+  background-color: #bfbfbf;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

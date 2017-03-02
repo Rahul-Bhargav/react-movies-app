@@ -12,3 +12,9 @@
 .options {
   padding-left: 10px
 }
+
+.movie-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
