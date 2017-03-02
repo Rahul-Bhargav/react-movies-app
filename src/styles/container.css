@@ -1,0 +1,14 @@
+.container {
+  margin: auto;
+  padding: 20px;
+}
+.container .filter {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.options {
+  padding-left: 10px
+}
