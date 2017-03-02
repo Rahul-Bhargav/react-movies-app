@@ -80,6 +80,15 @@ const filterdMovies = [
 const actors = [
   'Bill Tyler', 'Derek Day', 'Ricky Hunter', 'Nathaniel Hart'
 ]
+const moviesWithoutActors = [
+  {},
+  {}
+]
+
+const moviesWithInvalidActors = [
+  {actors: ''},
+  {actors: []}
+]
 
 // GenerateActorsList
 it('generateActorsList should return array', () => {
@@ -92,6 +101,31 @@ it('generateActorsList should return unique actors', () => {
   expect(result).toEqual(actors)
 })
 
+it('generateActorsList should return error when given undefined', () => {
+  const result = helper.generateActorsList()
+  expect(result).toEqual('invalid input')
+})
+
+it('generateActorsList should return error when given object', () => {
+  const result = helper.generateActorsList({})
+  expect(result).toEqual('invalid input')
+})
+
+it('generateActorsList should return error when given empty array', () => {
+  const result = helper.generateActorsList([])
+  expect(result).toEqual('invalid input')
+})
+
+it('generateActorsList should return error when given array without actors', () => {
+  const result = helper.generateActorsList(moviesWithoutActors)
+  expect(result).toEqual('invalid input at 0,1')
+})
+
+it('generateActorsList should return error when given array without actors', () => {
+  const result = helper.generateActorsList(moviesWithInvalidActors)
+  expect(result).toEqual('invalid input at 0')
+})
+
 // GetMoviesBasedOnActor
 it('getMoviesBasedOnActor should return array', () => {
   const result = helper.getMoviesBasedOnActor(movies, actors[0])
@@ -101,6 +135,11 @@ it('getMoviesBasedOnActor should return array', () => {
 it('getMoviesBasedOnActor should return array', () => {
   const result = helper.getMoviesBasedOnActor(movies, actors[0])
   expect(result).toEqual(filterdMovies)
+})
+
+it('getMoviesBasedOnActor should return error if movies is invalid', () => {
+  const result = helper.getMoviesBasedOnActor(null, actors[0])
+  expect(result).toEqual('invalid movies input')
 })
 
 // GetRatingColor
