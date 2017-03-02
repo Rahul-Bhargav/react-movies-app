@@ -81,6 +81,7 @@ const actors = [
   'Bill Tyler', 'Derek Day', 'Ricky Hunter', 'Nathaniel Hart'
 ]
 
+// GenerateActorsList
 it('generateActorsList should return array', () => {
   const result = helper.generateActorsList(movies)
   expect(result).toBeInstanceOf(Array)
@@ -91,6 +92,7 @@ it('generateActorsList should return unique actors', () => {
   expect(result).toEqual(actors)
 })
 
+// GetMoviesBasedOnActor
 it('getMoviesBasedOnActor should return array', () => {
   const result = helper.getMoviesBasedOnActor(movies, actors[0])
   expect(result).toBeInstanceOf(Array)
@@ -99,4 +101,15 @@ it('getMoviesBasedOnActor should return array', () => {
 it('getMoviesBasedOnActor should return array', () => {
   const result = helper.getMoviesBasedOnActor(movies, actors[0])
   expect(result).toEqual(filterdMovies)
+})
+
+// GetRatingColor
+it('getRatingColor should return String', () => {
+  const result = helper.getRatingColor(1)
+  expect(typeof result).toEqual('string')
+})
+
+it('getRatingColor should return red if give a rating of 1', () => {
+  const result = helper.getRatingColor(1)
+  expect(result).toEqual('red')
 })
