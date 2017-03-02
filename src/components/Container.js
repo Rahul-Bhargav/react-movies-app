@@ -1,5 +1,8 @@
 import React from 'react'
-import '../styles/App.css'
+import '../styles/container.css'
+import Filter from './Filter'
+import MovieList from './MovieList'
+import apiInterface from '../apiInterface'
 
 export default class Container extends React.Component {
   constructor (props) {
@@ -7,15 +10,18 @@ export default class Container extends React.Component {
     this.state = { movies: [], loading: true, actors: [] }
   }
   render () {
+    if (this.state.loading) return (<div className="container">loading</div>)
     return (
       <div className="container">
-        <div className="filter">
-          <p>Filter by Actors</p>
-          <select selected="all">
-            <option value='all'>All</option>
-          </select>
-        </div>
+        <Filter />
+        <MovieList movies={this.state.movies}/>
       </div>
     )
+  }
+  componentDidMount () {
+    apiInterface.readMovieRefs()
+      .then(result => {
+        this.setState({ movies: result, loading: false })
+      })
   }
 }
