@@ -2,8 +2,51 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 80px;
   background-color: #bfbfbf;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+.theme-strip {
+    display: 'inline-block';
+    width: 10%;
+}
+.movie-rating {
+  display: flex;
+  justify-content: center;
+  background-color: #ffe066;
+  width: 10%;
+  padding: 20px;
+}
+
+.rating {
+  align-self: center;
+}
+
+.movie-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.movie-content .name {
+  text-align: center;
+  font-size: xx-large;
+  padding-bottom: 5px;
+}
+.movie-content .desc {
+  font-size: small;
+  padding: 5px;
+}
+
+.actors-date {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  align-content: center;
+}
+
+.actors-date ul {
+  margin: 0px;
+  padding-left: 10px;
 }
