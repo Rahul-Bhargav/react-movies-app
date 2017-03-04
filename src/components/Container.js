@@ -16,11 +16,25 @@ export default class Container extends React.Component {
   }
 
   render () {
-    if (this.state.loading) return (<div className="container">loading</div>)
+    if (this.state.loading) {
+      return (
+        <div id="bigloading">
+          <div id="loading">
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+          <div id="lefthalf"></div>
+          <div id="righthalf"></div>
+        </div>
+      )
+    }
     const moviesToShow = this.state.currentSelectedActor === 'all' ? this.state.movies : helper.getMoviesBasedOnActor(this.state.movies, this.state.currentSelectedActor)
     return (
       <div className="container">
-        <Filter actors={this.state.actors} onActorSelected={this.onActorSelected.bind(this)} selected={this.state.currentSelectedActor}/>
+        <Filter actors={this.state.actors} onActorSelected={this.onActorSelected.bind(this)} selected={this.state.currentSelectedActor} />
         <MovieList movies={moviesToShow} />
       </div>
     )
