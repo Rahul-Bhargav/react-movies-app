@@ -1,6 +1,7 @@
 .container {
   padding: 20px;
 }
+
 .container .filter {
   padding: 15px;
   margin: auto;
@@ -15,7 +16,8 @@
 }
 
 .options {
-  padding-left: 10px
+  padding-left: 30px;
+  width: 20%;
 }
 
 .movie-list {
@@ -25,13 +27,14 @@
 }
 
 .filter select {
+  width: 100%;
   -webkit-appearance: none;
-    outline: none;
-    background: #a6a6a6;
-    border: none;
-    background-image: url(https://d30y9cdsu7xlg0.cloudfront.net/png/10897-200.png);
-    background-repeat: no-repeat;
-    background-position: right top;
-    background-size: contain;
-    padding: 5px 35px 5px 5px;
+  outline: none;
+  background: #a6a6a6;
+  border: none;
+  background-image: url(https://d30y9cdsu7xlg0.cloudfront.net/png/10897-200.png);
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: contain;
+  padding: 5px 35px 5px 5px;
 }
